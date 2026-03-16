@@ -1,0 +1,41 @@
+<! DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> Estimate Pro - JT Restaurant</title>
+        <style>
+            body { font-family: 'Arial', sans-serif; background-color: #ffffff; 
+        text-align: center; padding: 30px; }
+        .card {background-color: #ffffff; padding: 30px; border-radius: 15px; display: inline-block; width: 90%; max-width: 250px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <h2>JT Restaurant</h2>
+            <p>Chose your food!</p>
+            <div class="item">
+                <label>Papaya Salad(2)</label>
+                <input type="checkbox" id="papayasalad" value="2">
+            </div>
+            <div class="item">
+                <label>Fire Chicken(3)</label>
+                <input type="checkbox" id="firechicken" value="3">
+            </div>
+            <div class="item">
+                <label>green curry(3)</label>
+                <input type="checkbox" id="greencurry" value="3">
+            </div>
+            <button class="btn-calc" onclick="calculateTotal()">Enter</button>
+            <div id="result">Total: 0 Dollar</div>
+            </div>
+            <script>
+                function calculateTotal() { let papayasaladprice =document.getElementById('papayasalad').checked ? 2: 0;
+                    let firechickenprice =document.getElementById('firechicken').checked ? 3: 0;
+                    let greencurryprice =document.getElementById('greencurry').checked ? 3: 0;
+                    let total = papayasaladprice + firechickenprice + greencurryprice;
+                    document.getElementById('result').innerText = "Total: " + total.toLocaleString() + " Dollar";
+                }
+            </script>
+    </body>
+</html>
